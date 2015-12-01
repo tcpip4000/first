@@ -6,7 +6,7 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-<ui:composition template="main_template">
+<ui:composition template="main_template.xhtml">
 	Main page
 	<ui:define name="header">
 	    <div>
@@ -14,9 +14,13 @@
 	    </div>
 	</ui:define>
 	<ui:define name="content">
-	    <div>
-	    	Content is here
-	    </div>
+		<h:form id="myform">
+		    <div>
+		    	Content is here
+		    	<h:outputLabel value="Age" for="age" />
+		    	<h:inputText id="age" value="age" />
+		    </div>
+	    </h:form>
 	</ui:define>
 	<ui:define name="footer">
 	    <div>
