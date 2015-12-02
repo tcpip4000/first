@@ -20,9 +20,6 @@ public class ProductsBean {
 	public List<Product> getProducts() {
 		if (products == null) {
 			products = productDao.listProducts();
-			/*products = new ArrayList<Product>();
-			products.add(new Product("xbox onew", 1230));
-			products.add(new Product("taco", 59.99));*/
 		}
 		return products;
 	}
