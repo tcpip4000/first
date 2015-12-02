@@ -6,7 +6,13 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
+<ui:debug hotkey="x" rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}"/>
+
 <ui:composition template="main_template.xhtml">
+	<ui:define name="styles">
+		<h:outputStylesheet library="css" name="style.css" />
+	</ui:define>
+
 	Main page
 	<ui:define name="header">
 	    <div>
@@ -15,7 +21,7 @@
 	</ui:define>
 	<ui:define name="content">
 		<h:form id="myform">
-			<p>Fill this form:</p>
+			<p class="red">Fill this form:</p>
 		    <div>
 		    	<h:outputLabel value="Name" for="name" />
 		    	<h:inputText id="name" />
