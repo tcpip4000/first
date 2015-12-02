@@ -6,13 +6,15 @@
 <h:head>
   <title><ui:insert name="title">Default title</ui:insert></title>
   
+  <h:outputStylesheet library="css" name="style2.css" />
+  
   <ui:insert name="styles">
   	Page styles here
   </ui:insert>
   
 </h:head>
 
-<body>
+<h:body>
 
 <ui:debug hotkey="x" rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}"/>
 
@@ -45,6 +47,6 @@
   </ui:insert>
 </div>
 
-</body>
+</h:body>
 
 </html>
