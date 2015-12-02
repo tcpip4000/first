@@ -10,21 +10,25 @@
 	Main page
 	<ui:define name="header">
 	    <div>
-	    	Header is here
+	    	<h1>Welcome to this webpage</h1>
 	    </div>
 	</ui:define>
 	<ui:define name="content">
 		<h:form id="myform">
+			<p>Fill this form:</p>
 		    <div>
-		    	Content is here
+		    	<h:outputLabel value="Name" for="name" />
+		    	<h:inputText id="name" />
+		    </div>
+		    <div>
 		    	<h:outputLabel value="Age" for="age" />
-		    	<h:inputText id="age" value="age" />
+		    	<h:inputText id="age" />
 		    </div>
 	    </h:form>
 	</ui:define>
 	<ui:define name="footer">
 	    <div>
-	    	Footer is here
+	    	ER Technology 2015
 	    </div>
 	</ui:define>
 </ui:composition>
