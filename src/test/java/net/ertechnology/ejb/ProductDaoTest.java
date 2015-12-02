@@ -13,6 +13,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import static org.junit.Assert.*;
+
+import java.util.List;
+
 import static org.hamcrest.core.Is.*;
 
 @RunWith(Arquillian.class)
@@ -25,7 +28,7 @@ public class ProductDaoTest {
 	public static JavaArchive createDeployment() {
 		return ShrinkWrap
 				.create(JavaArchive.class)
-				.addClasses(ProductDao.class, ProductDaoTest.class)
+				.addClasses(ProductDao.class, TestDataGenerator.class)
 				.addPackage(Product.class.getPackage())
 				.addAsManifestResource("META-INF/persistence.xml",
 						"persistence.xml")
@@ -35,5 +38,11 @@ public class ProductDaoTest {
 	@Test
 	public void should_be_deployed() {
 		Assert.assertNotNull(productDao);
+	}
+	
+	@Test
+	public void testListProducts() {
+		List<Product> products = productDao.listProducts();
+		assertThat(products.size(), is(2));
 	}
 }
