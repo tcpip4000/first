@@ -37,7 +37,20 @@
 	          
 	          <h:form>
 	          	  
-	          	  <h:inputText value="#{productsBean.filter}">
+	          	  <!-- Basket -->
+	          	  <h:dataTable value="#{basket.products}" var="product">
+	          	  	<h:column>
+	          	  		#{product.name}
+	          	  	</h:column>
+	          	  </h:dataTable>
+	          	  
+	          	  <div>Total: #{basket.total}
+	          	  	<h:commandButton action="#{basket.checkout}" value="checkout" />
+	          	  </div>
+	          	  
+	          	  <!-- Products -->
+	          	  <h:outputLabel value="Search:" for="search" />
+	          	  <h:inputText id="search" value="#{productsBean.filter}">
 	          	  	<f:ajax event="keyup" render="dataTable" />
 	          	  </h:inputText>
 	          	  <!-- <h:commandButton value="filter" /> -->
@@ -61,6 +74,10 @@
 	   						</h:link>
 	   					</f:facet>
 	   					#{product.price}
+	 				</h:column>
+	 				
+	 				<h:column>
+	 					<h:commandButton action="#{basket.addProduct(product)}" value="Add" />
 	 				</h:column>
 		          </h:dataTable>
 	          </h:form>
