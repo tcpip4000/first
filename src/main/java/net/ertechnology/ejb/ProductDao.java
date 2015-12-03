@@ -36,4 +36,8 @@ public class ProductDao {
 		return listProducts(null, true);
 		//return em.createQuery("select p from Product p", Product.class).getResultList();
 	}
+
+	public Product findProduct(long pid) {
+		return em.find(Product.class, pid);
+	}
 }

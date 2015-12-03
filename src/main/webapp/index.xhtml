@@ -42,7 +42,10 @@
 	   				
 	   				<h:column>
 	   					<f:facet name="header">Name</f:facet>
-	   					#{product.name}
+	   					
+	   					<h:link value="#{product.name}" outcome="product_detail.xhtml">
+	   						<f:param name="pid" value="#{product.id}" />
+	   					</h:link>
 		          	</h:column>
 		          	<h:column>
 	   					<f:facet name="header">
@@ -74,13 +77,7 @@
 	    </div> <!-- /container -->	
 	</ui:define>
 	
-	<ui:define name="footer">
-		<div class="container">
-	      <footer>
-	        <p>&#169; 2015 Company, Inc.</p>
-	      </footer>
-      	</div>
-	</ui:define>
+
 </ui:composition>
 </html>
 

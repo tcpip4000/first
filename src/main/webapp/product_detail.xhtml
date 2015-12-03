@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition template="main_template.xhtml">
+		<ui:define name="content">
+			<f:metadata>
+				<f:viewParam name="pid" value="#{productDetailBean.pid}" />
+				<f:event listener="#{productDetailBean.loadProduct}" 
+						 type="javax.faces.event.PreRenderComponentEvent" />
+			</f:metadata>
+		
+			<h:form>
+				#{productDetailBean.product.name}
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</html>

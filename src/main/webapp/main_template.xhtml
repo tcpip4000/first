@@ -17,9 +17,8 @@
   <h:outputStylesheet library="css" name="patches/ie10-viewport-bug-workaround.css" />
   <h:outputStylesheet library="css" name="style.css" />
   
-  <!-- Page style -->
+  <!-- Page styles -->
   <ui:insert name="page-style">
-  	Page styles here
   </ui:insert>
   
 </h:head>
@@ -76,7 +75,11 @@
 	
 	<div id="footer">
 	  <ui:insert name="footer">
-	    	Footer area.  See comments below this line in the source.
+   			<div class="container">
+	      	<footer>
+		        <p>&#169; 2015 Company, Inc.</p>
+		      </footer>
+	      	</div>
 	    	<!--  include your header file or uncomment the include below and create footer.xhtml in this directory -->
 			<!--<ui:include src="footer.xhtml"/>  -->
 	  </ui:insert>
