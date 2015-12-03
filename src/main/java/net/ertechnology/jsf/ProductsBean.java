@@ -16,10 +16,20 @@ public class ProductsBean {
 	
 	@Inject
 	ProductDao productDao;
+	
+	private boolean order = true;
+
+	public boolean isOrder() {
+		return order;
+	}
+
+	public void setOrder(boolean order) {
+		this.order = order;
+	}
 
 	public List<Product> getProducts() {
 		if (products == null) {
-			products = productDao.listProducts();
+			products = productDao.listProducts(null, order);
 		}
 		return products;
 	}

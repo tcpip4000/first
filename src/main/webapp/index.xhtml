@@ -23,6 +23,11 @@
 	</ui:define>
 	
 	<ui:define name="content">
+		
+		<f:metadata>
+			<f:viewParam name="order" value="#{productsBean.order}" />
+		</f:metadata>
+	
 	    <div class="container">
 	      <!-- Example row of columns -->
 	      <div class="row">
@@ -30,20 +35,25 @@
 	          <h2>Heading 1</h2>
 	          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 	          
-	          <p>List of products: </p>
-	          <h:dataTable value="#{productsBean.products}"
-	          				var="product">
-   				
-   				<h:column>
-   					<f:facet name="header">Name</f:facet>
-   					#{product.name}
-	          	</h:column>
-	          	<h:column>
-   					<f:facet name="header">Price</f:facet>
-   					#{product.price}
- 				</h:column>
-	          </h:dataTable>
-	          
+	          <h:form>
+		          <p>List of products: </p>
+		          <h:dataTable value="#{productsBean.products}"
+		          				var="product">
+	   				
+	   				<h:column>
+	   					<f:facet name="header">Name</f:facet>
+	   					#{product.name}
+		          	</h:column>
+		          	<h:column>
+	   					<f:facet name="header">
+	   						<h:link value="Price">
+	   							<f:param name="order" value="#{!productsBean.order}" />
+	   						</h:link>
+	   					</f:facet>
+	   					#{product.price}
+	 				</h:column>
+		          </h:dataTable>
+	          </h:form>
 	          
 	          <p><a class="btn btn-default" href="#" role="button">View details	&#187;</a></p>
 	        </div>
