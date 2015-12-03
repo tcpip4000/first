@@ -37,11 +37,14 @@
 	          
 	          <h:form>
 	          	  
-	          	  <h:inputText value="#{productsBean.filter}" />
-	          	  <h:commandButton value="filter" />
+	          	  <h:inputText value="#{productsBean.filter}">
+	          	  	<f:ajax event="keyup" render="dataTable" />
+	          	  </h:inputText>
+	          	  <!-- <h:commandButton value="filter" /> -->
 	          	
 		          <p>List of products: </p>
-		          <h:dataTable value="#{productsBean.products}"
+		          <h:dataTable id="dataTable"
+		          				value="#{productsBean.products}"
 		          				var="product">
 	   				
 	   				<h:column>
