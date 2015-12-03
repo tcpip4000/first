@@ -57,4 +57,10 @@ public class ProductDaoTest {
 		List<Product> products = productDao.listProducts(null, false);
 		assertThat(products.get(0).getPrice(), is(399.99));
 	}
+	
+	@Test
+	public void testSearchProducts() {
+		List<Product> products = productDao.listProducts("Xbox", true);
+		assertThat(products.size(), is(1));
+	}
 }

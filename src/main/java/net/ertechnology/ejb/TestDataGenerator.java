@@ -20,5 +20,5 @@ public class TestDataGenerator {
 		em.persist(new Product("Xbox ONE", 359.99));
 		em.persist(new Product("Playstation 4", 399.99));
 	}
-
+	
 }

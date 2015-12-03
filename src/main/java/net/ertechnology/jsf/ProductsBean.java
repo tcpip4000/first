@@ -13,7 +13,8 @@ import net.ertechnology.entity.Product;
 @RequestScoped
 public class ProductsBean {
 	private List<Product> products;
-	
+	private String filter;
+
 	@Inject
 	ProductDao productDao;
 	
@@ -26,10 +27,19 @@ public class ProductsBean {
 	public void setOrder(boolean order) {
 		this.order = order;
 	}
+	
+	public String getFilter() {
+		return filter;
+	}
+
+	public void setFilter(String filter) {
+		this.filter = filter;
+		products = null;
+	}
 
 	public List<Product> getProducts() {
 		if (products == null) {
-			products = productDao.listProducts(null, order);
+			products = productDao.listProducts(filter, order);
 		}
 		return products;
 	}

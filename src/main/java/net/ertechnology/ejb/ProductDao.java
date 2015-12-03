@@ -29,6 +29,10 @@ public class ProductDao {
 			query.orderBy(cb.desc(product.get("price")));	
 		}
 		
+		if (filter != null) {
+			query.where(cb.like(product.<String>get("name"), filter + "%"));
+		}
+		
 		return em.createQuery(query).getResultList();		
 	}
 	

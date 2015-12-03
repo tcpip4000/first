@@ -36,6 +36,10 @@
 	          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 	          
 	          <h:form>
+	          	  
+	          	  <h:inputText value="#{productsBean.filter}" />
+	          	  <h:commandButton value="filter" />
+	          	
 		          <p>List of products: </p>
 		          <h:dataTable value="#{productsBean.products}"
 		          				var="product">
