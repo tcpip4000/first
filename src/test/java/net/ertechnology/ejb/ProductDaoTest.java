@@ -45,4 +45,16 @@ public class ProductDaoTest {
 		List<Product> products = productDao.listProducts();
 		assertThat(products.size(), is(2));
 	}
+	
+	@Test
+	public void testListProductsSortAsc() {
+		List<Product> products = productDao.listProducts();
+		assertThat(products.get(0).getPrice(), is(359.99));
+	}
+	
+	@Test
+	public void testListProductsSortDesc() {
+		List<Product> products = productDao.listProducts(null, false);
+		assertThat(products.get(0).getPrice(), is(399.99));
+	}
 }
